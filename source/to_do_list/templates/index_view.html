@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+  {% csrf_token %}
+<p>
+    {{ task.task }}
+</p>
+  <p>
+      {{ task.status_t }}
+  </p>
+<p>
+    {{ task.date_of_completion }}
+</p>
+<p><a href="/">На главную</a></p>
+
+</body>
+</html>
