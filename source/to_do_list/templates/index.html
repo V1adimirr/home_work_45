@@ -2,11 +2,11 @@
 {% load static %}
 
 {% block content %}
-        <a href="tasks/add">Постановка новой задачи.</a>
+        <a href="{% url "create_task" %}">Постановка новой задачи.</a>
         <h1>Задачи: </h1>
         {% for article in tasks %}
             <h3>{{ article.date_of_completion }}</h3>
             <span>{{ article.status_t }}</span>
-            <p><a href=/task/?pk={{ article.pk }}">Подробнее</a></p>
+            <p><a href="{% url "task_view" article.pk %}">Подробнее</a></p>
         {% endfor %}
 {% endblock %}
