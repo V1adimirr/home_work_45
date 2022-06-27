@@ -1,22 +1,16 @@
+{% extends "base.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-</head>
-<body>
-<h1>Добавление</h1>
-<form action="/tasks/add/" method="post">
-    {% csrf_token %}
-    <label>Task:</label><br/>
-    <textarea name="task"></textarea><br/>
-    <label>date_of_completion:</label><br/>
-    <input type="text" name="date_of_completion"/><br/>
-    <br/>
-    <input type="submit" value="Send"/>
-</form>
-<p><a href="/">На главную</a></p>
 
-</body>
-</html>
+{% block create %}
+    <h1>Добавление</h1>
+    <form action="/tasks/add/" method="post">
+        {% csrf_token %}
+        <label>Task:</label><br/>
+        <textarea name="task"></textarea><br/>
+        <label>date_of_completion:</label><br/>
+        <input type="text" name="date_of_completion"/><br/>
+        <br/>
+        <input type="submit" value="Send"/>
+    </form>
+    <p><a href="/">На главную</a></p>
+{% endblock %}

@@ -1,12 +1,7 @@
+{% extends "base.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-</head>
-<body>
-  {% csrf_token %}
+
+{% block preview %}
 <p>
     {{ task.task }}
 </p>
@@ -18,5 +13,4 @@
 </p>
 <p><a href="/">На главную</a></p>
 
-</body>
-</html>
+{% endblock %}

@@ -13,7 +13,7 @@ def task_view(request):
     task_id = request.GET.get('pk')
     task = Tasks.objects.get(pk=task_id)
     context = {'task': task}
-    return render(request, 'index_view.html', context)
+    return render(request, 'task_view.html', context)
 
 def create_task(request):
     if request.method == "GET":
@@ -23,4 +23,4 @@ def create_task(request):
         date_of_completion = request.POST.get("date_of_completion")
         new_task = Tasks.objects.create(task=task, date_of_completion=date_of_completion)
         context = {"task": new_task}
-        return render(request, "index_view.html", context)
+        return render(request, "task_view.html", context)
