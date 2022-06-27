@@ -1,0 +1,33 @@
+File tracking disabled
+[
+{
+    "model": "to_do_list.tasks",
+    "pk": 1,
+    "fields": {
+        "task": "задача 1",
+        "description": "выполнение чего то там кем то там",
+        "status_t": "new",
+        "date_of_completion": "2022-06-30"
+    }
+},
+{
+    "model": "to_do_list.tasks",
+    "pk": 2,
+    "fields": {
+        "task": "задача 2",
+        "description": "",
+        "status_t": "new",
+        "date_of_completion": "2022-07-09"
+    }
+},
+{
+    "model": "to_do_list.tasks",
+    "pk": 3,
+    "fields": {
+        "task": "задача 3 ",
+        "description": "установить что то куда то",
+        "status_t": "new",
+        "date_of_completion": "2022-07-10"
+    }
+}
+]
