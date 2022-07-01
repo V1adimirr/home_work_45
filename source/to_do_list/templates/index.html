@@ -6,7 +6,7 @@
         <h1>Задачи: </h1>
         {% for article in tasks %}
             <h3>{{ article.date_of_completion }}</h3>
-            <span>{{ article.status_t }}</span>
+            <span>{{ article.get_status_t_display }}</span>
             <p><a href="{% url "task_view" article.pk %}">Подробнее</a></p>
         {% endfor %}
 {% endblock %}

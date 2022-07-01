@@ -1,24 +1,31 @@
 {% extends "base.html" %}
 {% load static %}
+
 {% block nav %}
     <li class="nav-item">
-        <a class="nav-link" href="{% url "create_task" %}">Новая задача</a>
+        <a class="nav-link active" href="{% url "create_task" %}">Новая задача</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link active" href="{% url "update_task"  task.pk %}">Изменение задачи</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link active" href="{% url "delete_task" task.pk %}">Удаление задачи</a>
     </li>
 {% endblock %}
 
 
 {% block content %}
 <p>
-    {{ task.task }}
+    Задача: {{ task.task }}
 </p>
   <p>
-      {{ task.status_t }}
+    Статус: {{ task.get_status_t_display }}
   </p>
     <p>
-    {{ task.description}}
+    Описание: {{ task.description}}
     </p>
 <p>
-    {{ task.date_of_completion }}
+    Дата: {{ task.date_of_completion }}
 </p>
 <p><a href="{% url "index" %}">На главную</a></p>
 

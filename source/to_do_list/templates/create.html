@@ -3,15 +3,7 @@
 
 {% block content %}
     <form action="" method="post">
-        {% csrf_token %}
-        <label>Task:</label><br/>
-        <textarea name="task"></textarea><br/>
-        <label>Description:</label><br/>
-        <textarea name="description"></textarea><br/>
-        <label>date_of_completion:</label><br/>
-        <input type="date" name="date_of_completion"/><br/>
-        <br/>
-        <input type="submit" value="Send"/>
+
+        {% include "partial/form.html" %}
     </form>
-    <p><a href="{% url "index" %}">На главную</a></p>
 {% endblock %}
