@@ -1,0 +1,32 @@
+  {% csrf_token %}
+
+<label>Status:</label><br/>
+    <select name="status">
+        {% for status in statuses %}
+        <option value="{{ status.0 }}">{{ status.1 }}</option>
+        {% endfor %}
+    </select>
+
+  <p><label for="{{ form.task.id_for_label }}">{{ form.task.label }}</label></p>
+  {% for error in form.task.errors %}
+    <p class="text-danger">{{ error }}</p>
+  {% endfor %}
+<p>{{ form.task }}</p>
+
+ <p><label for="{{ form.description.id_for_label }}">{{ form.description.label }}</label></p>
+  {% for error in form.description.errors %}
+    <p class="text-danger">{{ error }}</p>
+  {% endfor %}
+<p>{{ form.description }}</p>
+
+<p>
+    <input type="date">{{ date_of_completion }}
+
+</p>
+
+<input type="submit" value="Send"/>
+
+<p><a href="{% url "index" %}">На главную</a></p>
+
+
+
